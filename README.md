@@ -46,11 +46,18 @@ Unknown roles are denied by default.
 - Uses parameterized SQL for employee inserts
 
 ### 5. Automated Security Testing
-Eight automated tests cover:
+Ten automated tests cover:
 - Role permission decisions
 - Unauthorized access rejection
 - Unknown roles and classifications
 - Database access behavior using mocks
+
+### 6. Audit Logging
+- Records allowed and denied access attempts
+- Logs user roles, requested resources, and access decisions
+- Uses Python's built-in logging module
+- Stores audit records locally in audit.log
+- Includes automated tests for audit logging
 
 ## Sample ETL Results
 
@@ -91,7 +98,6 @@ The duplicate detection rule is simplified for demonstration purposes.
 
 ## Future Improvements
 
-- Centralized audit logging
 - Data classification metadata
 - More comprehensive data validation
 - Stronger identity and access management
