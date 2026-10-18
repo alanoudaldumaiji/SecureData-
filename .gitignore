@@ -17,3 +17,4 @@ venv/
 # Environment variables and secrets
 .env
 .env.*
+audit.log

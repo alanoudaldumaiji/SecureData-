@@ -4,6 +4,8 @@ from pathlib import Path
 
 from security import check_access
 
+from audit_logger import log_access
+
 
 
 DB_PATH = Path(__file__).parent / "securedata.db"
@@ -19,6 +21,7 @@ def get_employees(role):
 
 
     if not check_access(role, classification):
+        log_access(role, "Employee Directory", False)
 
         raise PermissionError(
 
@@ -27,7 +30,8 @@ def get_employees(role):
         )
 
 
-
+    log_access(role, "Employee Directory", True)
+    
     connection = sqlite3.connect(DB_PATH)
 
 
